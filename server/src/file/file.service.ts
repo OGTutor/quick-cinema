@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { FileResponse } from './file.interface';
 import { path } from 'app-root-path';
 import { ensureDir, writeFile } from 'fs-extra';
+import * as uuid from 'uuid';
 
 @Injectable()
 export class FileService {
@@ -14,14 +15,14 @@ export class FileService {
 
 		const res: FileResponse[] = await Promise.all(
 			files.map(async (file) => {
-				await writeFile(
-					`${uploadFolder}/${file.originalname}`,
-					file.buffer
-				);
+				const fileExtension = file.originalname.split('.').pop();
+				const fileName = uuid.v4() + '.' + fileExtension;
+
+				await writeFile(`${uploadFolder}/${fileName}`, file.buffer);
 
 				return {
-					url: `/uploads/${folder}/${file.originalname}`,
-					name: file.originalname,
+					url: `/uploads/${folder}/${fileName}`,
+					name: fileName,
 				};
 			})
 		);

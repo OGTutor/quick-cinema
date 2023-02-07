@@ -20,7 +20,6 @@ export class AuthService {
 
 	async login(dto: AuthDto) {
 		const user = await this.validateUser(dto);
-
 		const tokens = await this.issueTokenPair(String(user._id));
 
 		return {
@@ -37,7 +36,6 @@ export class AuthService {
 			throw new UnauthorizedException('Invalid token or expired!');
 
 		const user = await this.UserModel.findById(result._id);
-
 		const tokens = await this.issueTokenPair(String(user._id));
 
 		return {
@@ -54,14 +52,12 @@ export class AuthService {
 			);
 
 		const salt = await genSalt(10);
-
 		const newUser = new this.UserModel({
 			email: dto.email,
 			password: await hash(dto.password, salt),
 		});
 
 		const user = await newUser.save();
-
 		const tokens = await this.issueTokenPair(String(user._id));
 
 		return {
@@ -87,7 +83,6 @@ export class AuthService {
 		const refreshToken = await this.JwtService.signAsync(data, {
 			expiresIn: '15d',
 		});
-
 		const accessToken = await this.JwtService.signAsync(data, {
 			expiresIn: '1h',
 		});

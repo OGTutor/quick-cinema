@@ -44,7 +44,6 @@ export class UserService {
 
 	async getAll(searchTerm?: string) {
 		let options = {};
-
 		if (searchTerm) {
 			options = { $or: [{ email: new RegExp(searchTerm, 'i') }] };
 		}
@@ -56,6 +55,9 @@ export class UserService {
 	}
 
 	async delete(id: string) {
-		return this.UserModel.findByIdAndDelete(id).exec();
+		const deleteDoc = await this.UserModel.findByIdAndDelete(id).exec();
+		if (!deleteDoc) throw new NotFoundException('User not found!');
+
+		return deleteDoc;
 	}
 }

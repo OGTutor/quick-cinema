@@ -13,7 +13,6 @@ export class GenreService {
 
 	async bySlug(slug: string) {
 		const slugDoc = await this.GenreModel.findOne({ slug }).exec();
-
 		if (!slugDoc) throw new NotFoundException('Slug not found!');
 
 		return slugDoc;
@@ -21,7 +20,6 @@ export class GenreService {
 
 	async getAll(searchTerm?: string) {
 		let options = {};
-
 		if (searchTerm) {
 			options = {
 				$or: [
@@ -48,7 +46,6 @@ export class GenreService {
 
 	async byId(_id: string) {
 		const genre = await this.GenreModel.findById(_id);
-
 		if (!genre) throw new NotFoundException('Genre not found!');
 
 		return genre;
@@ -62,6 +59,7 @@ export class GenreService {
 			icon: '',
 		};
 		const genre = await this.GenreModel.create(defaultValue);
+
 		return genre._id;
 	}
 
@@ -69,7 +67,6 @@ export class GenreService {
 		const updateDoc = await this.GenreModel.findByIdAndUpdate(_id, dto, {
 			new: true,
 		}).exec();
-
 		if (!updateDoc) throw new NotFoundException('Genre not found!');
 
 		return updateDoc;
@@ -77,7 +74,6 @@ export class GenreService {
 
 	async delete(id: string) {
 		const deleteDoc = await this.GenreModel.findByIdAndDelete(id).exec();
-
 		if (!deleteDoc) throw new NotFoundException('Genre not found!');
 
 		return deleteDoc;
