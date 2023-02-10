@@ -1,3 +1,4 @@
+import { TelegramService } from './../telegram/telegram.service';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
@@ -8,7 +9,8 @@ import { Movie, MovieDocument } from './schemas/movie.schema';
 export class MovieService {
 	constructor(
 		@InjectModel(Movie.name)
-		private readonly MovieModel: Model<MovieDocument>
+		private readonly MovieModel: Model<MovieDocument>,
+		private readonly TelegramService: TelegramService
 	) {}
 
 	async getAll(searchTerm?: string) {
@@ -110,6 +112,11 @@ export class MovieService {
 	}
 
 	async update(_id: string, dto: UpdateMovieDto) {
+		if (!dto.isSendTelegram) {
+			await this.sendNotification(dto);
+			dto.isSendTelegram = true;
+		}
+
 		const updateDoc = await this.MovieModel.findByIdAndUpdate(_id, dto, {
 			new: true,
 		}).exec();
@@ -123,5 +130,27 @@ export class MovieService {
 		if (!deleteDoc) throw new NotFoundException('Movie not found!');
 
 		return deleteDoc;
+	}
+
+	async sendNotification(dto: UpdateMovieDto) {
+		// if (process.env.NODE_ENV !== 'development') {
+		// 	await this.TelegramService.sendPhoto(dto.poster);
+		// }
+		await this.TelegramService.sendPhoto(
+			'https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg'
+		);
+		const message = `<b>${dto.title}</b>`;
+		await this.TelegramService.sendMessage(message, {
+			reply_markup: {
+				inline_keyboard: [
+					[
+						{
+							url: 'https://www.netflix.com/ua-ru/',
+							text: '🍿 Go to watch',
+						},
+					],
+				],
+			},
+		});
 	}
 }

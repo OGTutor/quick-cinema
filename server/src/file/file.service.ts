@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { FileResponse } from './file.interface';
+import { IFileResponse } from './file.interface';
 import { path } from 'app-root-path';
 import { ensureDir, writeFile } from 'fs-extra';
 import * as uuid from 'uuid';
@@ -9,11 +9,11 @@ export class FileService {
 	async saveFiles(
 		files: Express.Multer.File[],
 		folder: string = 'default'
-	): Promise<FileResponse[]> {
+	): Promise<IFileResponse[]> {
 		const uploadFolder = `${path}/uploads/${folder}`;
 		await ensureDir(uploadFolder);
 
-		const res: FileResponse[] = await Promise.all(
+		const res: IFileResponse[] = await Promise.all(
 			files.map(async (file) => {
 				const fileExtension = file.originalname.split('.').pop();
 				const fileName = uuid.v4() + '.' + fileExtension;
