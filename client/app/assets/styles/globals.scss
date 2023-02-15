@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-	src: url('../app/assets/fonts/assassin.woff2') format('woff2');
+	src: url('../fonts/assassin.woff2') format('woff2');
 	font-family: 'assassin-st';
 	font-weight: 700;
 	font-style: italic;
 }
+
+@import 'react-redux-toastr/src/styles/index';
 
 * {
 	box-sizing: border-box;

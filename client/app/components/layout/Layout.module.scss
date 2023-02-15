@@ -3,14 +3,9 @@ $bar-width: 20%;
 .layout {
 	@apply relative;
 
-	> div:first-child {
-		@apply fixed top-0 bottom-0 overflow-y-hidden;
-		width: $bar-width;
-		max-width: 350px;
-	}
-
+	> div:first-child,
 	> div:last-child {
-		@apply fixed top-0 bottom-0 overflow-y-scroll;
+		@apply fixed top-0 bottom-0 overflow-y-hidden;
 		width: $bar-width;
 		max-width: 350px;
 	}
