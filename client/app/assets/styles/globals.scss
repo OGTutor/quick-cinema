@@ -41,3 +41,7 @@ input[type='file']::-webkit-file-upload-button {
 input:focus {
 	box-shadow: none !important;
 }
+
+.admin-form {
+	@apply w-1/2 mt-12;
+}

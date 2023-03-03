@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 
@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
 	},
 });
 
-const MainProvider: FC<React.PropsWithChildren<TypeComponentAuthFields>> = ({
+const MainProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	children,
 	Component,
 }) => {

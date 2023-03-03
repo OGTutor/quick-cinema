@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 
 import MaterialIcon from '../MaterialIcon';
 
@@ -6,7 +6,7 @@ import styles from './SearchField.module.scss';
 
 interface ISearchField {
 	searchTerm: string;
-	handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const SearchField: FC<ISearchField> = ({ searchTerm, handleSearch }) => {

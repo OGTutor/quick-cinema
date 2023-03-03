@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { FC, useEffect } from 'react';
+import { FC, PropsWithChildren, useEffect } from 'react';
 
 import { useActions } from '@/hooks/useActions';
 import { useAuth } from '@/hooks/useAuth';
@@ -10,7 +10,7 @@ import { TypeComponentAuthFields } from '@/shared/types/auth.types';
 
 const DynamicCheckRole = dynamic(() => import('./CheckRole'), { ssr: false });
 
-const AuthProvider: FC<React.PropsWithChildren<TypeComponentAuthFields>> = ({
+const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	children,
 	Component: { isOnlyAdmin, isOnlyUser },
 }) => {

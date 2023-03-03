@@ -10,7 +10,7 @@ import MovieList from './MovieList';
 const PopularMovies: FC = () => {
 	const { isLoading, data: popularMovies } = useQuery(
 		'Popular movies in sidebar',
-		() => MovieService.getMostPopularMovies()
+		() => MovieService.getMostPopular()
 	);
 
 	return isLoading ? (

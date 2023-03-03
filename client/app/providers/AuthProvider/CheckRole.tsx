@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import { useAuth } from '@/hooks/useAuth';
 
 import { TypeComponentAuthFields } from '@/shared/types/auth.types';
 
-const CheckRole: FC<React.PropsWithChildren<TypeComponentAuthFields>> = ({
+const CheckRole: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	children,
 	Component: { isOnlyAdmin, isOnlyUser },
 }) => {

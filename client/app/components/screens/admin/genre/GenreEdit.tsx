@@ -10,10 +10,10 @@ import Field from '@/components/ui/form-elements/Field';
 import SlugField from '@/components/ui/form-elements/SlugField/SlugField';
 import Heading from '@/components/ui/heading/Heading';
 
+import formStyles from '@/ui/form-elements/admin-form.module.scss';
+
 import Meta from '@/utils/meta/Meta';
 import { generateSlug } from '@/utils/string/generateSlug';
-
-import formStyles from '../../../ui/form-elements/admin-form.module.scss';
 
 import { IGenreEditInput } from './genre-edit.interface';
 import { useGenreEdit } from './useGenreEdit';

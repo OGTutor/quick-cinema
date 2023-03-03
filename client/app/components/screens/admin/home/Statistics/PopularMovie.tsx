@@ -18,7 +18,7 @@ import styles from '../Admin.module.scss';
 const PopularMovie: FC = () => {
 	const { isLoading, data: movie } = useQuery(
 		'Most popular movie in admin',
-		() => MovieService.getMostPopularMovies(),
+		() => MovieService.getMostPopular(),
 		{ select: (data): IMovie => data[0] }
 	);
 

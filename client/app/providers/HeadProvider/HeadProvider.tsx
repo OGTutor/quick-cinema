@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import NextNProgress from 'nextjs-progressbar';
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import { accentColor } from '@/config/constants';
 
 import Favicons from './Favicons';
 
-const HeadProvider: FC<React.PropsWithChildren> = ({ children }) => {
+const HeadProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
 			<NextNProgress

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { useDebounce } from '@/hooks/useDebounce';
@@ -18,7 +18,7 @@ export const useSearch = () => {
 		}
 	);
 
-	const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.target.value);
 	};
 

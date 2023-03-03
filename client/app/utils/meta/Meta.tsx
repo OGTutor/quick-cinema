@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import logoImage from '@/assets/images/logo.svg';
 
@@ -10,7 +10,7 @@ import { onlyText } from '../string/clearText';
 
 import { ISeo } from './meta.interface';
 
-const Meta: FC<React.PropsWithChildren<ISeo>> = ({
+const Meta: FC<PropsWithChildren<ISeo>> = ({
 	title,
 	description,
 	image,
