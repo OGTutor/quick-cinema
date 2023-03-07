@@ -1,24 +1,24 @@
-import dynamic from 'next/dynamic';
-import { FC } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import dynamic from 'next/dynamic'
+import { FC } from 'react'
+import { Controller, useForm } from 'react-hook-form'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader';
-import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation';
-import Button from '@/components/ui/form-elements/Button';
-import Field from '@/components/ui/form-elements/Field';
-import SlugField from '@/components/ui/form-elements/SlugField/SlugField';
-import UploadField from '@/components/ui/form-elements/UploadField/UploadField';
-import Heading from '@/components/ui/heading/Heading';
+import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
+import Button from '@/components/ui/form-elements/Button'
+import Field from '@/components/ui/form-elements/Field'
+import SlugField from '@/components/ui/form-elements/SlugField/SlugField'
+import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
+import Heading from '@/components/ui/heading/Heading'
+import SkeletonLoader from '@/components/ui/SkeletonLoader'
 
-import formStyles from '@/ui/form-elements/admin-form.module.scss';
+import formStyles from '@/ui/form-elements/admin-form.module.scss'
 
-import Meta from '@/utils/meta/Meta';
-import { generateSlug } from '@/utils/string/generateSlug';
+import Meta from '@/utils/meta/Meta'
+import { generateSlug } from '@/utils/string/generateSlug'
 
-import { IMovieEditInput } from './movie-edit.interface';
-import { useAdminActors } from './useAdminActors';
-import { useAdminGenres } from './useAdminGenres';
-import { useMovieEdit } from './useMovieEdit';
+import { IMovieEditInput } from './movie-edit.interface'
+import { useAdminActors } from './useAdminActors'
+import { useAdminGenres } from './useAdminGenres'
+import { useMovieEdit } from './useMovieEdit'
 
 const DynamicSelect = dynamic(() => import('@/ui/select/Select'), {
 	ssr: false,
