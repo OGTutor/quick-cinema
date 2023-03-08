@@ -1,13 +1,15 @@
 import { FC } from 'react';
 
+import Gallery from '@/components/ui/gallery/Gallery';
 import Heading from '@/components/ui/heading/Heading';
+import SubHeading from '@/components/ui/heading/SubHeading';
 import Slider from '@/components/ui/slider/Slider';
 
 import Meta from '@/utils/meta/Meta';
 
 import { IHome } from './home.interface';
 
-const Home: FC<IHome> = ({ slides }) => {
+const Home: FC<IHome> = ({ slides, actors, trendingMovies }) => {
 	return (
 		<Meta
 			title="Watch movies online"
@@ -18,6 +20,20 @@ const Home: FC<IHome> = ({ slides }) => {
 				className="text-gray-300 mb-8 text-2xl text-center uppercase text-shadow"
 			/>
 			{slides.length && <Slider slides={slides} />}
+			<div className="my-10">
+				<SubHeading
+					title="Trending now"
+					className="text-gray-400 text-xl text-center uppercase text-shadow text-opacity-80"
+				/>
+				{trendingMovies.length && <Gallery items={trendingMovies} />}
+			</div>
+			<div>
+				<SubHeading
+					title="Best actors"
+					className="text-gray-300 text-xl text-center uppercase text-shadow text-opacity-80"
+				/>
+				{actors.length && <Gallery items={actors} />}
+			</div>
 		</Meta>
 	);
 };

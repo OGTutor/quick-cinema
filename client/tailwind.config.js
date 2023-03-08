@@ -69,6 +69,9 @@ module.exports = {
 				fade: 'fade 0.5s ease-in-out',
 				scaleIn: 'scaleIn 0.35s ease-in-out',
 			},
+			width: {
+				50: '197px',
+			},
 		},
 	},
 	plugins: [
