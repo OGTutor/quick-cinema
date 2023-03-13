@@ -1,0 +1,10 @@
+.form {
+	@apply mt-12;
+	.fields {
+		@apply flex items-center flex-wrap justify-between;
+
+		> div {
+			width: 48%;
+		}
+	}
+}

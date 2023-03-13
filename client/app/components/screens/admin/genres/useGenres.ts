@@ -3,6 +3,8 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
+import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface';
+
 import { useDebounce } from '@/hooks/useDebounce';
 
 import { GenreService } from '@/services/genre.service';
@@ -10,8 +12,6 @@ import { GenreService } from '@/services/genre.service';
 import { toastError } from '@/utils/toast-error';
 
 import { getAdminUrl } from '@/config/url.config';
-
-import { ITableItem } from '../../../ui/admin-table/AdminTable/admin-table.interface';
 
 export const useGenres = () => {
 	const [searchTerm, setSearchTerm] = useState('');

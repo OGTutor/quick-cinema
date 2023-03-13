@@ -3,6 +3,8 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
+import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface';
+
 import { useDebounce } from '@/hooks/useDebounce';
 
 import { ActorService } from '@/services/actor.service';
@@ -10,8 +12,6 @@ import { ActorService } from '@/services/actor.service';
 import { toastError } from '@/utils/toast-error';
 
 import { getAdminUrl } from '@/config/url.config';
-
-import { ITableItem } from '../../../ui/admin-table/AdminTable/admin-table.interface';
 
 export const useActors = () => {
 	const [searchTerm, setSearchTerm] = useState('');

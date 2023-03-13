@@ -1,13 +1,13 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import Catalog from '@/components/ui/catalog-movies/Catalog';
+import Catalog from '@/components/ui/catalog-movies/Catalog'
 
-import { IGenre, IMovie } from '@/shared/types/movie.types';
+import { IGenre, IMovie } from '@/shared/types/movie.types'
 
-import { GenreService } from '@/services/genre.service';
-import { MovieService } from '@/services/movie.service';
+import { GenreService } from '@/services/genre.service'
+import { MovieService } from '@/services/movie.service'
 
-import Error404 from '../404';
+import Error404 from '../404'
 
 interface IGenrePage {
 	movies: IMovie[];
