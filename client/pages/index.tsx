@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		const dataTrendingMovies = await MovieService.getMostPopular();
 
 		const trendingMovies: IGalleryItem[] = dataTrendingMovies
-			.slice(0, 7)
+			.slice(0, 5)
 			.map((movie) => ({
 				name: movie.title,
 				posterPath: movie.poster,

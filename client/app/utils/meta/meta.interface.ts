@@ -1,5 +1,5 @@
 export interface ISeo {
-	title: string;
+	title?: string;
 	description?: string;
 	image?: string;
 }
