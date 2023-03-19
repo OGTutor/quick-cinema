@@ -13,7 +13,11 @@ const MovieList: FC<IMovieList> = ({ link, movies, title }) => {
 				<MovieItem key={movie._id} movie={movie} />
 			))}
 			<Link href={link} legacyBehavior>
-				<a className={styles.button}>See more</a>
+				<a className={styles.button}>
+					{link === '/trending'
+						? 'Popular movies'
+						: 'Favorites movies'}
+				</a>
 			</Link>
 		</div>
 	);

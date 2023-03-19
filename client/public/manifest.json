@@ -1,0 +1,60 @@
+{
+	"short_name": "QCinema",
+	"name": "Quick Cinema",
+	"start_url": "/",
+	"background_color": "#191B1F",
+	"app_name": "Quick Cinema",
+	"scope": "/",
+	"theme_color": "#E30B13",
+	"description": "Watch QuickCinema app movies and TV shows online or stream right to your browser",
+	"icons": [
+		{
+			"src": "/favicons/apple-touch-icon-57x57.png",
+			"type": "image/png",
+			"sizes": "57x57",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-72x72.png",
+			"type": "image/png",
+			"sizes": "72x72",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-76x76.png",
+			"type": "image/png",
+			"sizes": "76x76",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-114x114.png",
+			"type": "image/png",
+			"sizes": "114x114",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-120x120.png",
+			"type": "image/png",
+			"sizes": "120x120",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-144x144.png",
+			"type": "image/png",
+			"sizes": "144x144",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-152x152.png",
+			"type": "image/png",
+			"sizes": "152x152",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon-180x180.png",
+			"type": "image/png",
+			"sizes": "180x180",
+			"purpose": "any maskable"
+		}
+	]
+}

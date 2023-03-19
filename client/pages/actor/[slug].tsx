@@ -1,13 +1,13 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import Catalog from '@/components/ui/catalog-movies/Catalog'
+import Catalog from '@/components/ui/catalog-movies/Catalog';
 
-import { IActor, IMovie } from '@/shared/types/movie.types'
+import { IActor, IMovie } from '@/shared/types/movie.types';
 
-import { ActorService } from '@/services/actor.service'
-import { MovieService } from '@/services/movie.service'
+import { ActorService } from '@/services/actor.service';
+import { MovieService } from '@/services/movie.service';
 
-import Error404 from '../404'
+import Error404 from '../404';
 
 interface IActorPage {
 	movies: IMovie[];
@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				movies,
 				actor,
 			},
+			revalidate: 60,
 		};
 	} catch (error) {
 		return {
