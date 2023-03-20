@@ -1,12 +1,10 @@
-import axios from 'api/interceptors';
+import axios, { axiosClassic } from 'api/interceptors';
 
 import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.interface';
 
 import { IMovie } from '@/shared/types/movie.types';
 
 import { getMoviesUrl } from '@/config/api.config';
-
-import { axiosClassic } from './../api/interceptors';
 
 export const MovieService = {
 	async getAll(searchTerm?: string) {

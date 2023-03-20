@@ -7,10 +7,10 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface';
 
 import { useDebounce } from '@/hooks/useDebounce';
 
-import { MovieService } from '@/services/movie.service';
+import { MovieService } from '@/services/movie/movie.service';
 
+import { toastError } from '@/utils/api/toast-error';
 import { getGenresList } from '@/utils/movie/getGenresList';
-import { toastError } from '@/utils/toast-error';
 
 import { getAdminUrl } from '@/config/url.config';
 

@@ -2,14 +2,14 @@ import { useQuery } from 'react-query';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { UserService } from '@/services/user.service';
+import { UserService } from '@/services/user/user.service';
 
 export const useFavorites = () => {
 	const { user } = useAuth();
 
 	const {
 		isLoading,
-		data: favoriteMovies,
+		data: favoritesMovies,
 		refetch,
 	} = useQuery('favorite movies', () => UserService.getFavorites(), {
 		select: ({ data }) => data,
@@ -18,7 +18,7 @@ export const useFavorites = () => {
 
 	return {
 		isLoading,
-		favoriteMovies,
+		favoritesMovies,
 		refetch,
 	};
 };

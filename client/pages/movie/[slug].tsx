@@ -1,22 +1,20 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import SingleMovie from '@/components/screens/single-movie/SingleMovie';
-import { IGalleryItem } from '@/components/ui/gallery/gallery.interface';
+import { IGalleryItem } from '@/components/ui/gallery/gallery.types';
 
 import { IMovie } from '@/shared/types/movie.types';
 
-import { MovieService } from '@/services/movie.service';
+import { MovieService } from '@/services/movie/movie.service';
 
 import { getMovieUrl } from '@/config/url.config';
 
 import Error404 from '../404';
 
-export interface IMoviePage {
-	movie: IMovie;
+const MoviePage: NextPage<{
+	movie: IMovie | undefined;
 	similarMovies: IGalleryItem[];
-}
-
-const MoviePage: NextPage<IMoviePage> = ({ similarMovies, movie }) => {
+}> = ({ similarMovies, movie }) => {
 	return movie ? (
 		<SingleMovie similarMovies={similarMovies || []} movie={movie} />
 	) : (
@@ -59,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			.map((movie) => ({
 				name: movie.title,
 				posterPath: movie.poster,
-				link: getMovieUrl(movie.slug),
+				url: getMovieUrl(movie.slug),
 			}));
 
 		return {

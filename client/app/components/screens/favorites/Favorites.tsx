@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader';
 import Heading from '@/components/ui/heading/Heading';
+import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader';
 
 import { useAuth } from '@/hooks/useAuth';
 
 import Meta from '@/utils/meta/Meta';
+
+import { getMovieUrl } from '@/config/url.config';
 
 import Error404 from '../../../../pages/404';
 
@@ -14,7 +16,7 @@ import styles from './Favorites.module.scss';
 import { useFavorites } from './useFavorites';
 
 const Favorites: FC = () => {
-	const { favoriteMovies, isLoading } = useFavorites();
+	const { favoritesMovies, isLoading } = useFavorites();
 
 	const { user } = useAuth();
 
@@ -31,8 +33,17 @@ const Favorites: FC = () => {
 						containerClassName={styles.containerLoader}
 					/>
 				) : (
-					favoriteMovies?.map((movie) => (
-						<FavoriteItem key={movie._id} movie={movie} />
+					favoritesMovies?.map((movie) => (
+						<FavoriteItem
+							key={movie._id}
+							item={{
+								name: movie.title,
+								posterPath: movie.bigPoster,
+								url: getMovieUrl(movie.slug),
+								title: movie.title,
+								_id: movie._id,
+							}}
+						/>
 					))
 				)}
 			</section>

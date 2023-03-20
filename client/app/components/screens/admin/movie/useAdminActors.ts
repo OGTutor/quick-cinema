@@ -2,9 +2,9 @@ import { useQuery } from 'react-query';
 
 import { IOption } from '@/ui/select/select.interface';
 
-import { ActorService } from '@/services/actor.service';
+import { ActorService } from '@/services/actor/actor.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 export const useAdminActors = () => {
 	const queryData = useQuery('List of actors', () => ActorService.getAll(), {

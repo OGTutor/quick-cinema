@@ -1,9 +1,9 @@
-import dynamic from 'next/dynamic'
-import { FC } from 'react'
+import dynamic from 'next/dynamic';
+import { FC } from 'react';
 
-import { IMenu } from './menu.interface'
-import styles from './Menu.module.scss'
-import MenuItem from './MenuItem'
+import styles from './Menu.module.scss';
+import MenuItem from './MenuItem';
+import { IMenu } from './menu.types';
 
 const DynamicAuthItems = dynamic(() => import('./auth/AuthItems'), {
 	ssr: false,

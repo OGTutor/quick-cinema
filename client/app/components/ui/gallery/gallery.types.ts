@@ -1,7 +1,7 @@
 export interface IGalleryItem {
 	posterPath: string;
 	name: string;
-	link: string;
+	url: string;
 	content?: {
 		title: string;
 		subTitle?: string;

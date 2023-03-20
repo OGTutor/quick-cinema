@@ -1,29 +1,15 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import Catalog from '@/components/ui/catalog-movies/Catalog';
+import Genre from '@/components/screens/genre/Genre';
+import { IGenrePage } from '@/components/screens/genre/genre.types';
 
-import { IGenre, IMovie } from '@/shared/types/movie.types';
-
-import { GenreService } from '@/services/genre.service';
-import { MovieService } from '@/services/movie.service';
+import { GenreService } from '@/services/genre/genre.service';
+import { MovieService } from '@/services/movie/movie.service';
 
 import Error404 from '../404';
 
-interface IGenrePage {
-	movies: IMovie[];
-	genre: IGenre | undefined;
-}
-
 const GenrePage: NextPage<IGenrePage> = ({ movies, genre }) => {
-	return genre ? (
-		<Catalog
-			movies={movies || []}
-			title={genre.name}
-			description={genre.description}
-		/>
-	) : (
-		<Error404 />
-	);
+	return genre ? <Genre genre={genre} movies={movies} /> : <Error404 />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

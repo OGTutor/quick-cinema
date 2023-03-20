@@ -1,9 +1,9 @@
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { useMutation } from 'react-query';
 
-import { FileService } from '@/services/file.service';
+import { FileService } from '@/services/file/file.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 type TypeUpload = (
 	onChange: (...event: any[]) => void,

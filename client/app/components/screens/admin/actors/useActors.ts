@@ -7,9 +7,9 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface';
 
 import { useDebounce } from '@/hooks/useDebounce';
 
-import { ActorService } from '@/services/actor.service';
+import { ActorService } from '@/services/actor/actor.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 import { getAdminUrl } from '@/config/url.config';
 

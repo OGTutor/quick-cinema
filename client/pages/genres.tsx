@@ -1,9 +1,9 @@
 import { GetStaticProps, NextPage } from 'next';
 
 import Collections from '@/components/screens/collections/Collections';
-import { ICollection } from '@/components/screens/collections/collections.interface';
+import { ICollection } from '@/components/screens/collections/collections.types';
 
-import { GenreService } from '@/services/genre.service';
+import { GenreService } from '@/services/genre/genre.service';
 
 import Error404 from './404';
 

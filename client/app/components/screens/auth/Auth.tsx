@@ -9,8 +9,9 @@ import { useAuth } from '@/hooks/useAuth';
 
 import Meta from '@/utils/meta/Meta';
 
+import AuthFields from '../../shared/user/AuthFields';
+
 import styles from './Auth.module.scss';
-import AuthFields from './AuthFields';
 import { IAuthInput } from './auth.interface';
 import { useAuthRedirect } from './useAuthRedirect';
 

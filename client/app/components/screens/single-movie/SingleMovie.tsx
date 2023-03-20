@@ -3,11 +3,12 @@ import { FC } from 'react';
 
 import Banner from '@/components/ui/banner/Banner';
 import Gallery from '@/components/ui/gallery/Gallery';
+import { IGalleryItem } from '@/components/ui/gallery/gallery.types';
 import SubHeading from '@/components/ui/heading/SubHeading';
 
-import Meta from '@/utils/meta/Meta';
+import { IMovie } from '@/shared/types/movie.types';
 
-import { IMoviePage } from '../../../../pages/movie/[slug]';
+import Meta from '@/utils/meta/Meta';
 
 import Content from './Content/Content';
 import { useUpdateCountOpened } from './useUpdateCountOpened';
@@ -19,7 +20,10 @@ const DynamicRateMovie = dynamic(() => import('./RateMovie/RateMovie'), {
 	ssr: false,
 });
 
-const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
+const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
+	movie,
+	similarMovies,
+}) => {
 	useUpdateCountOpened(movie.slug);
 
 	return (

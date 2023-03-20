@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader';
+import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader';
 
 import Menu from '../Menu';
 

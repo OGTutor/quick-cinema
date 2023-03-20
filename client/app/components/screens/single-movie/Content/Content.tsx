@@ -1,17 +1,17 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import MaterialIcon from '@/components/ui/MaterialIcon'
+import MaterialIcon from '@/components/ui/icons/MaterialIcon';
 
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '@/hooks/useAuth';
 
-import { IMovie } from '@/shared/types/movie.types'
+import { IMovie } from '@/shared/types/movie.types';
 
-import { getActorUrl, getGenreUrl } from '@/config/url.config'
+import { getActorUrl, getGenreUrl } from '@/config/url.config';
 
-import FavoriteButton from '../FavoriteButton/FavoriteButton'
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-import styles from './Content.module.scss'
-import ContentList from './ContentList/ContentList'
+import styles from './Content.module.scss';
+import ContentList from './ContentList/ContentList';
 
 const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 	const { user } = useAuth();

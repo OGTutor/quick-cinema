@@ -7,7 +7,7 @@ import Slider from '@/components/ui/slider/Slider';
 
 import Meta from '@/utils/meta/Meta';
 
-import { IHome } from './home.interface';
+import { IHome } from './home.types';
 
 const Home: FC<IHome> = ({ slides, actors, trendingMovies }) => {
 	return (

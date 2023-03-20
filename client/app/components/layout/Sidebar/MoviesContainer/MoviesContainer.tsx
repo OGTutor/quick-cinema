@@ -1,17 +1,17 @@
 import dynamic from 'next/dynamic';
 import { FC } from 'react';
 
-import PopularMovies from './PopularMovies';
+import PopularMovieList from './PopularMovieList/PopularMovieList';
 
 const DynamicFavoriteMovies = dynamic(
-	() => import('./FavoriteMovies/FavoriteMovies'),
+	() => import('./FavoriteMovieList/FavoriteMovieList'),
 	{ ssr: false }
 );
 
 const MoviesContainer: FC = () => {
 	return (
 		<div>
-			<PopularMovies />
+			<PopularMovieList />
 			<DynamicFavoriteMovies />
 		</div>
 	);

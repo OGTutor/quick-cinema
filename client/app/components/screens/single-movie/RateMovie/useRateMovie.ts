@@ -3,9 +3,9 @@ import { useMutation, useQuery } from 'react-query';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { RatingService } from '@/services/rating.service';
+import { RatingService } from '@/services/rating/rating.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 export const useRateMovie = (movieId: string) => {
 	const [rating, setRating] = useState(0);

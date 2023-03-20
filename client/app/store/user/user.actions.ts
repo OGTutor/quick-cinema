@@ -3,7 +3,7 @@ import { toastr } from 'react-redux-toastr';
 
 import { AuthService } from '@/services/auth/auth.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 import { errorCatch } from './../../api/api.helpers';
 import { IAuthResponse, IEmailPassword } from './user.interface';

@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from 'next';
 
-import Catalog from '@/components/ui/catalog-movies/Catalog';
+import Catalog from '@/components/screens/templates/catalog-movies/Catalog';
 
 import { IMovie } from '@/shared/types/movie.types';
 
-import { MovieService } from '@/services/movie.service';
+import { MovieService } from '@/services/movie/movie.service';
 
 const TrendingPage: NextPage<{ movies: IMovie[] }> = ({ movies }) => {
 	return (

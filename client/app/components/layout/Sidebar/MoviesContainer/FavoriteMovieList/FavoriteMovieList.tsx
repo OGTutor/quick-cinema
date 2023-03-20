@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { useFavorites } from '@/components/screens/favorites/useFavorites';
-import SkeletonLoader from '@/components/ui/SkeletonLoader';
+import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader';
 
 import { useAuth } from '@/hooks/useAuth';
 
@@ -9,8 +9,8 @@ import MovieList from '../MovieList';
 
 import NotAuthFavorites from './NotAuthFavorites';
 
-const FavoriteMovies: FC = () => {
-	const { favoriteMovies, isLoading } = useFavorites();
+const FavoriteMovieList: FC = () => {
+	const { favoritesMovies, isLoading } = useFavorites();
 
 	const { user } = useAuth();
 
@@ -22,11 +22,13 @@ const FavoriteMovies: FC = () => {
 		</div>
 	) : (
 		<MovieList
-			link="/favorites"
-			movies={favoriteMovies?.slice(0, 2) || []}
-			title="Favorites"
+			list={{
+				link: '/favorites',
+				movies: favoritesMovies?.slice(0, 2) || [],
+				title: 'Favorites',
+			}}
 		/>
 	);
 };
 
-export default FavoriteMovies;
+export default FavoriteMovieList;

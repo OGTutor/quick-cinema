@@ -3,10 +3,10 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
-import { ActorService } from '@/services/actor.service';
+import { ActorService } from '@/services/actor/actor.service';
 
+import { toastError } from '@/utils/api/toast-error';
 import { getKeys } from '@/utils/object/getKeys';
-import { toastError } from '@/utils/toast-error';
 
 import { getAdminUrl } from '@/config/url.config';
 

@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 import styles from './Gallery.module.scss';
-import { IGalleryItemProps } from './gallery.interface';
+import { IGalleryItemProps } from './gallery.types';
 
 const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 	return (
-		<Link href={item.link} legacyBehavior>
+		<Link href={item.url} legacyBehavior>
 			<a
 				className={cn(styles.item, {
 					[styles.withText]: item.content,

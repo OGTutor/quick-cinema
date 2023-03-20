@@ -6,7 +6,7 @@ import { getGenreUrl } from '@/config/url.config';
 
 import CollectionImage from './CollectionImage';
 import styles from './Collections.module.scss';
-import { ICollection } from './collections.interface';
+import { ICollection } from './collections.types';
 
 const CollectionItem: FC<{ collection: ICollection }> = ({ collection }) => {
 	return (

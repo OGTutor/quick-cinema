@@ -2,9 +2,9 @@ import cn from 'classnames';
 import { FC, useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 
-import { UserService } from '@/services/user.service';
+import { UserService } from '@/services/user/user.service';
 
-import { toastError } from '@/utils/toast-error';
+import { toastError } from '@/utils/api/toast-error';
 
 import { useFavorites } from '../../favorites/useFavorites';
 
@@ -13,14 +13,14 @@ import styles from './FavoriteButton.module.scss';
 const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 	const [isSmashed, setIsSmashed] = useState(false);
 
-	const { favoriteMovies, refetch } = useFavorites();
+	const { favoritesMovies, refetch } = useFavorites();
 
 	useEffect(() => {
-		if (!favoriteMovies) return;
+		if (!favoritesMovies) return;
 
-		const isHasMovie = favoriteMovies.some((f) => f._id === movieId);
+		const isHasMovie = favoritesMovies.some((f) => f._id === movieId);
 		if (isSmashed !== isHasMovie) setIsSmashed(isHasMovie);
-	}, [favoriteMovies, isSmashed, movieId]);
+	}, [favoritesMovies, isSmashed, movieId]);
 
 	const { mutateAsync } = useMutation(
 		'update favorites',

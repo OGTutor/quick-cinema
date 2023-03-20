@@ -1,15 +1,15 @@
 import { FC } from 'react';
 
+import GalleryItem from '@/components/ui/gallery/GalleryItem';
+import Description from '@/components/ui/heading/Description';
+import Heading from '@/components/ui/heading/Heading';
+
 import Meta from '@/utils/meta/Meta';
 
 import { getMovieUrl } from '@/config/url.config';
 
-import GalleryItem from '../gallery/GalleryItem';
-import Description from '../heading/Description';
-import Heading from '../heading/Heading';
-
 import styles from './Catalog.module.scss';
-import { ICatalog } from './catalog.interface';
+import { ICatalog } from './catalog.types';
 
 const Catalog: FC<ICatalog> = ({ movies, title, description }) => {
 	return (
@@ -27,7 +27,7 @@ const Catalog: FC<ICatalog> = ({ movies, title, description }) => {
 						key={movie._id}
 						item={{
 							name: movie.title,
-							link: getMovieUrl(movie.slug),
+							url: getMovieUrl(movie.slug),
 							posterPath: movie.bigPoster,
 							content: {
 								title: movie.title,

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { IVideoElement } from './video.interface';
+import { IVideoElement } from './video.types';
 
 export const useVideo = () => {
 	const videoRef = useRef<IVideoElement>(null);

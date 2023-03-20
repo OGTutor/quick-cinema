@@ -7,7 +7,7 @@ import Meta from '@/utils/meta/Meta';
 
 import CollectionItem from './CollectionItem';
 import styles from './Collections.module.scss';
-import { ICollection } from './collections.interface';
+import { ICollection } from './collections.types';
 
 const Collections: FC<{ collections: ICollection[] }> = ({ collections }) => {
 	return (

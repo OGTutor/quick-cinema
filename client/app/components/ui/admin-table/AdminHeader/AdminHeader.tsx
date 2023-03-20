@@ -1,8 +1,8 @@
 import { ChangeEvent, FC } from 'react';
 
 import SearchField from '../../search-field/SearchField';
+import AdminCreateButton from '../AdminCreateButton/AdminCreateButton';
 
-import AdminCreateButton from './AdminCreateButton';
 import styles from './AdminHeader.module.scss';
 
 interface IAdminHeader {

@@ -3,14 +3,13 @@ import { FC } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { stripHtml } from 'string-strip-html';
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader';
+import formStyles from '@/components/shared/admin/adminForm.module.scss';
 import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation';
 import Button from '@/components/ui/form-elements/Button';
 import Field from '@/components/ui/form-elements/Field';
 import SlugField from '@/components/ui/form-elements/SlugField/SlugField';
 import Heading from '@/components/ui/heading/Heading';
-
-import formStyles from '@/ui/form-elements/admin-form.module.scss';
+import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader';
 
 import Meta from '@/utils/meta/Meta';
 import { generateSlug } from '@/utils/string/generateSlug';

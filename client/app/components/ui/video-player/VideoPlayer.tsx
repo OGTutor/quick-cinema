@@ -1,14 +1,14 @@
 import cn from 'classnames';
 import { FC } from 'react';
 
-import { useAuth } from '@/hooks/useAuth';
+import MaterialIcon from '@/components/ui/icons/MaterialIcon';
 
-import MaterialIcon from '../MaterialIcon';
+import { useAuth } from '@/hooks/useAuth';
 
 import AuthPlaceholder from './AuthPlaceholder/AuthPlaceholder';
 import styles from './VideoPlayer.module.scss';
 import { useVideo } from './useVideo';
-import { IVideoPlayer } from './video.interface';
+import { IVideoPlayer } from './video.types';
 
 const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 	const { actions, video, videoRef } = useVideo();

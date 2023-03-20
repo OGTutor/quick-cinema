@@ -1,12 +1,12 @@
 import { GetStaticProps, NextPage } from 'next';
 
 import Home from '@/components/screens/home/Home';
-import { IHome } from '@/components/screens/home/home.interface';
-import { IGalleryItem } from '@/components/ui/gallery/gallery.interface';
-import { ISlide } from '@/components/ui/slider/slider.interface';
+import { IHome } from '@/components/screens/home/home.types';
+import { IGalleryItem } from '@/components/ui/gallery/gallery.types';
+import { ISlide } from '@/components/ui/slider/slider.types';
 
-import { ActorService } from '@/services/actor.service';
-import { MovieService } from '@/services/movie.service';
+import { ActorService } from '@/services/actor/actor.service';
+import { MovieService } from '@/services/movie/movie.service';
 
 import { getGenresList } from '@/utils/movie/getGenresList';
 
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		const actors: IGalleryItem[] = dataActors.slice(0, 5).map((actor) => ({
 			name: actor.name,
 			posterPath: actor.photo,
-			link: getActorUrl(actor.slug),
+			url: getActorUrl(actor.slug),
 			content: {
 				title: actor.name,
 				subTitle: `+${actor.countMovies} movies`,
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			.map((movie) => ({
 				name: movie.title,
 				posterPath: movie.poster,
-				link: getMovieUrl(movie.slug),
+				url: getMovieUrl(movie.slug),
 			}));
 
 		return {

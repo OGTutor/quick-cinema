@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import SlideArrow from './SlideArrow/SlideArrow';
 import SlideItem from './SlideItem';
 import styles from './Slider.module.scss';
-import { ISlide } from './slider.interface';
+import { ISlide } from './slider.types';
 import { useSlider } from './useSlider';
 
 interface ISlider {

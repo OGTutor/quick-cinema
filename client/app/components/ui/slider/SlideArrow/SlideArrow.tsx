@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { FC } from 'react';
 
-import MaterialIcon from '../../MaterialIcon';
+import MaterialIcon from '@/components/ui/icons/MaterialIcon';
 
 import styles from './SlideArrow.module.scss';
 

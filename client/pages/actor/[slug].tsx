@@ -1,25 +1,15 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import Catalog from '@/components/ui/catalog-movies/Catalog';
+import Actor from '@/components/screens/actor/Actor';
+import { IActorPage } from '@/components/screens/actor/actor.types';
 
-import { IActor, IMovie } from '@/shared/types/movie.types';
-
-import { ActorService } from '@/services/actor.service';
-import { MovieService } from '@/services/movie.service';
+import { ActorService } from '@/services/actor/actor.service';
+import { MovieService } from '@/services/movie/movie.service';
 
 import Error404 from '../404';
 
-interface IActorPage {
-	movies: IMovie[];
-	actor: IActor | undefined;
-}
-
 const ActorPage: NextPage<IActorPage> = ({ movies, actor }) => {
-	return actor ? (
-		<Catalog movies={movies || []} title={actor.name} />
-	) : (
-		<Error404 />
-	);
+	return actor ? <Actor actor={actor} movies={movies} /> : <Error404 />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

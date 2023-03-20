@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import styles from './Slider.module.scss';
-import { ISlide } from './slider.interface';
+import { ISlide } from './slider.types';
 
 interface ISlideItem {
 	slide: ISlide;

@@ -1,9 +1,18 @@
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
-import { IContentList } from '../content.interface';
-
 import styles from './ContentList.module.scss';
+
+interface ILink {
+	_id: string;
+	link: string;
+	title: string;
+}
+
+interface IContentList {
+	name: string;
+	links: ILink[];
+}
 
 const ContentList: FC<IContentList> = ({ links, name }) => {
 	return (
